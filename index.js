@@ -34,7 +34,7 @@ app.use(session({
     cookie: { maxAge: 100*100*60*60*12,
             secure: true,
             httpOnly:false,
-        sameSite: "none",
+        sameSite: "none"},
     //    domain:'https://master--vermillion-zabaione-03d5a9.netlify.app'},
     saveUninitialized: false,
     resave: true,
