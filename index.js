@@ -19,7 +19,7 @@ import {fileURLToPath} from 'url';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-
+app.set("trust proxy", 1);
 
 const store = new session.MemoryStore();
 
@@ -35,7 +35,7 @@ app.use(session({
             secure: true,
             httpOnly:false,
         sameSite: "none",
-        domain:'https://master--vermillion-zabaione-03d5a9.netlify.app'},
+    //    domain:'https://master--vermillion-zabaione-03d5a9.netlify.app'},
     saveUninitialized: false,
     resave: true,
     store,
