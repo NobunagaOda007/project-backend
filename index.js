@@ -32,7 +32,7 @@ app.use(cookieParser());
 app.use(session({
     secret: 'some secret',
     cookie: { maxAge: 100*100*60*60*12,
-            secure: false,
+            secure: true,
         sameSite: "none"},
     saveUninitialized: false,
     resave: true,
@@ -50,8 +50,7 @@ app.use(express.json());
 app.use(cors({
     origin: [
         'http://localhost:5000',
-        'http://localhost:5173',
-        'http://localhost:5173/login'
+        'https://master--vermillion-zabaione-03d5a9.netlify.app',
     ],
     
     credentials: true,
@@ -61,7 +60,7 @@ app.use(cors({
 app.use(Router);
 
 app.use(function(req,res,next){
-    res.header('Access-Control-Allow-Origin', "http://localhost:5173");
+    res.header('Access-Control-Allow-Origin', "https://master--vermillion-zabaione-03d5a9.netlify.app");
     res.header('Access-Control-Allow-Credentials', true);
     res.header('Access-Control-Allow-Methods', 'GET,PUT,POST');
     res.header('Access-Control-Allow-Headers', 'Content-Type');
