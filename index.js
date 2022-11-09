@@ -19,13 +19,15 @@ import {fileURLToPath} from 'url';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-app.set("trust proxy", 1);
+
 
 const store = new session.MemoryStore();
 
 
 
 const app = express();
+
+app.set("trust proxy", 1);
 
 app.use(cookieParser());
 
